@@ -28,9 +28,15 @@ import {Button,AppBar,Toolbar,Typography} from "@mui/material";
     const classes = useStyles();
     let navigate = useNavigate();
   
-    const handleClick = (goto) => {
-      navigate('./goto')
-    };
+    // const handleClick = (goto) => {
+    //   navigate("/")
+    // };
+    const LoginButton=()=>{
+      navigate("/login")
+    }
+    const SignupButton=()=>{
+      navigate("/signup")
+    }
   
     return (
       <AppBar position="fixed">
@@ -41,21 +47,21 @@ import {Button,AppBar,Toolbar,Typography} from "@mui/material";
           {isAuth() ? (
             userType() === "recruiter" ? (
               <>
-                <Button color="inherit" onClick={() => handleClick("/home")}>
+                {/* <Button color="inherit" onClick={() => handleClick("/home")}>
                   Home
                 </Button>
                 {/* <button></button> */}
-                <Button
+                {/* <Button
                     onClick={() => {
                         navigate("/home")
                     }}
                 >
                     HOME
-                </Button>
+                </Button> */}
 
 
 
-                <Button color="inherit" onClick={() => handleClick("/addjob")}>
+                {/* <Button color="inherit" onClick={() => handleClick("/addjob")}>
                   Add Jobs
                 </Button>
                 <Button color="inherit" onClick={() => handleClick("/myjobs")}>
@@ -66,14 +72,14 @@ import {Button,AppBar,Toolbar,Typography} from "@mui/material";
                 </Button>
                 <Button color="inherit" onClick={() => handleClick("/profile")}>
                   Profile
-                </Button>
-                <Button color="inherit" onClick={() => handleClick("/logout")}>
+                </Button> */}
+                {/* <Button color="inherit" onClick={() => handleClick("/logout")}>
                   Logout
-                </Button>
-              </>
+                </Button> */}
+              </> 
             ) : (
               <>
-                <Button color="inherit" onClick={() => handleClick("/home")}>
+                {/* <Button color="inherit" onClick={() => handleClick("/home")}>
                   Home
                 </Button>
                 <Button
@@ -87,25 +93,28 @@ import {Button,AppBar,Toolbar,Typography} from "@mui/material";
                 </Button>
                 <Button color="inherit" onClick={() => handleClick("/logout")}>
                   Logout
-                </Button>
+                </Button> */}
               </>
             )
           ) : (
             <>
-                <Button
-  onClick={() => {
-    alert('clicked');
-  }}
->
-  Click me
-</Button>
-
-              <Button color="inherit" onClick={() => handleClick("/login")}>
+                {/* <Button color="primary"
+                onClick={() => {
+                // alert('clicked');
+                }}
+                >
+                  Click me
+                </Button> */}
+                    {/* //////////() => handleClick("/login")}> */}
+              <Button color="inherit" onClick={LoginButton}>
                 Login
               </Button>
-              <Button color="inherit" onClick={() => handleClick("/signup")}>
+              <Button color="inherit" onClick={SignupButton}>
                 Signup
               </Button>
+              {/* <Button color="inherit" onClick={() => handleClick("/signup")}>
+                Signup
+              </Button> */}
             </>
           )}
         </Toolbar>
