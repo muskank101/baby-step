@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Grid } from '@mui/material';
 import {makeStyles} from "@mui/styles";
 import Welcome from "./component/Welcome";
-// import Signup from "./component/Signup";
+import Signup from "./component/Signup";
 import Navbar from "./Navbar"
 const useStyles = makeStyles((theme) => ({
   body: {
@@ -47,7 +47,7 @@ function App() {
                 {/* <Login /> */}
               </Route>
               <Route exact path="/signup">
-                {/* <Signup /> */}
+                <Signup />
               </Route>
               <Route exact path="/logout">
                 {/* <Logout /> */}

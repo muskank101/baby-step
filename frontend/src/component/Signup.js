@@ -1,10 +1,20 @@
 import React from 'react'
-import { createContext, useState } from "react";
-
+import { useContext, useState } from "react";
+import axios from 'axios';
 import { Grid,TextField,Button,Typography,makeStyles,Paper,MenuItem,Input} from '@mui/material';
 // import {makeStyles} from "@mui/styles";
 import isAuth from "../lib/isAuth";
+import Chip from '@mui/material/Chip';
+import {DescriptionIcon} from '@mui/icons-material/Description';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import PhoneInput from "react-phone-input-2";
+import {Navigate} from 'react-router-dom';
+import PasswordInput from "../lib/PasswordInput";
+import EmailInput from "../lib/EmailInput";
+import FileUploadInput from "../lib/FileUploadInput";
+import { SetPopupContext } from "../App";
 
+import apiList from "../lib/apiList";
 ////////////addd <Navigate replace to="/" /> inpalce of redirect
 
 ///styling mui
@@ -386,7 +396,7 @@ const Signup = (props) => {
                 setEducation={setEducation}
               />
               <Grid item>
-                <ChipInput
+                <chip
                   className={classes.inputBox}
                   label="Skills"
                   variant="outlined"
@@ -417,7 +427,7 @@ const Signup = (props) => {
                 <FileUploadInput
                   className={classes.inputBox}
                   label="Profile Photo (.jpg/.png)"
-                  icon={<FaceIcon />}
+                  icon={<PermIdentityIcon />}
                   // value={files.profileImage}
                   // onChange={(event) =>
                   //   setFiles({

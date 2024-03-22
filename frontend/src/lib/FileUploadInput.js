@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Grid, Button, TextField, LinearProgress } from "@mui/material";
-import { CloudUpload } from "@material-ui/icons";
+// import { CloudUpload } from "@material-ui/icons";
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Axios from "axios";
 
 import { SetPopupContext } from "../App";
@@ -97,7 +98,7 @@ const FileUploadInput = (props) => {
             onClick={() => handleUpload()}
             disabled={file ? false : true}
           >
-            <CloudUpload />
+            <CloudUploadIcon />
           </Button>
         </Grid>
       </Grid>
